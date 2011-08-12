@@ -1,10 +1,18 @@
+Este é uma fonte de dados para consultar frete 
+no site dos Correios.
+
+
+Antes de tudo você precisa seguir rigorosamente todos 
+os procedimentos de configuração, se errar uma virgula 
+não irá funcionar...
 <?php
 
 class DATABASE_CONFIG {
 
 
 	/**
-	 * Sua conexão padrão
+	 * Sua conexão padrão 
+	 * não precisa mudar nada nela
 	 *
 	 * @var unknown_type
 	 */
@@ -23,7 +31,9 @@ class DATABASE_CONFIG {
 	
 	
 	/**
-	 * Data source para Correios
+	 * Data source para Correios 
+	 * Apenas adicione a variavel $correio 
+	 * como no exemplo abaixo e pronto
 	 *
 	 * @var Array
 	 */
@@ -36,6 +46,16 @@ class DATABASE_CONFIG {
 
 ?>
 
+Se você não errou uma unica virgula tudo está pronto 
+pra começar... (sim, isto era pra ser engraçado).
+
+
+O funcionamento é bem simples, que nem precisa de 
+muita explicação. Imaginando que você queira saber 
+o frete para um determinado produto simplesmente 
+faça um $this->Correio->find( 'all', $arrayConditions ) 
+
+Veja este exemplo 
 <?php
 
 class fretes extends AppController{
@@ -64,3 +84,5 @@ class fretes extends AppController{
 	
 }
 ?>
+
+A documentação completa está disponível em http://www.vibemidia.com/correios-datasource-para-cakephp
