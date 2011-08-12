@@ -1,0 +1,66 @@
+<?php
+
+class DATABASE_CONFIG {
+
+
+	/**
+	 * Sua conexão padrão
+	 *
+	 * @var unknown_type
+	 */
+	var $default = array(
+		'driver' => 'mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'user',
+		'password' => 'password',
+		'database' => 'test_database_name',
+		'prefix' => '',
+		'encoding' => 'UTF8',
+	);
+	
+	
+	
+	
+	/**
+	 * Data source para Correios
+	 *
+	 * @var Array
+	 */
+	var $correio = array(
+		'datasource' => 'correio',
+	);
+	
+	
+}
+
+?>
+
+<?php
+
+class fretes extends AppController{
+	
+	public $name = "frete";
+	
+	
+	public function calcular_frete(){
+	
+		$this->Correio->find( 'all', array(
+			'nCdServico' 		=> 'pac', 
+			'sCepOrigem'		=> $this->data['Frete']['cep'], 
+			'sCepDestino' 		=> $this->data['Frete']['cepdestino'], 
+			'nVlPeso' 			=> $this->data['Frete']['peso'], 
+			'nVlComprimento'	=> $this->data['Frete']['comprimento'], 
+			'nVlAltura' 		=> $this->data['Frete']['altura'], 
+			'nVlLargura' 		=> $this->data['Frete']['largura'], 
+			'nCdFormato' 		=> 1, 
+			'nVlValorDeclarado' => $this->data['Frete']['valor'], 
+			'preco' 			=> $this->data['Frete']['valor'], 
+			'nCdEmpresa' 		=> $this->data['Frete']['contrato'], 
+			'sDsSenha' 			=> $this->data['Frete']['senha'],
+			'quantidade'		=> $this->data['Frete']['quantidade'],
+		) );
+	}
+	
+}
+?>
