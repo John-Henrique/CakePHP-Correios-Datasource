@@ -1,4 +1,10 @@
-Este é uma fonte de dados para consultar frete 
+Datasource para Consultar Frete no site dos Correios.
+
+É necessário adicionar o Plugin no bootstrap.php na pasta app/Config incluindo o bootstrap do plugin
+
+CakePlugin::load('Correios',array('bootstrap'=>true));
+
+Este é uma fonte de dados para consultar frete
 no site dos Correios.
 
 
