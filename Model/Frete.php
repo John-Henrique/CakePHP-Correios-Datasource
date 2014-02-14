@@ -18,8 +18,4 @@ class Frete extends AppModel {
             'Valor'=>array('type'=>'decimal','null'=>true,'length'=>array(10,2))
     );
 
-    public $validate = array(
-        'altura'=>array('rule'=>'isNumber','message'=>'Digite um número')
-    );
-
 } 
